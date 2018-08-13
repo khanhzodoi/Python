@@ -1,9 +1,9 @@
 name = 'Pham Khanh'
 age = 21 # not a lie
-height_in_cm = 176 #centimeters
-height_in_inches = height_in_cm / 2.54 # inches
-weight_in_kg = 76 #kilograms
-weight_in_ibs = weight_in_kg / 0.453 #ibs
+height_in_cm = 176.0 #centimeters
+height_in_inches = round(height_in_cm / 2.54) # inches
+weight_in_kg = 76.0 #kilograms
+weight_in_ibs = round(weight_in_kg / 0.453) #ibs
 eyes = 'Black'
 teeth = 'White'
 hair = 'Black'
