@@ -1,6 +1,6 @@
 from sys import argv # Adds argv(argument variable) function from module sys
 
-# Unpack argv and assign it to all of these below variableson the left hand in order
+# Unpack argv and assign it to all of these below variables on the left hand in order
 script, first, second, third = argv
 
 print("The script is called: ", script)
