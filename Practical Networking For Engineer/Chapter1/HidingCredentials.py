@@ -22,8 +22,8 @@ def decryptcredential(pwd):
     rvalue=rvalue.decode()
     return rvalue
 
-
-encryptedcreds=encryptcredential(creds)
-print ("Simple creds: " + creds)
-print ("Encrypted creds: " + encryptedcreds)
-print ("Decrypted creds: " + decryptcredential(encryptedcreds))
+if __name__ == "__main__":
+    encryptedcreds=encryptcredential(creds)
+    print ("Simple creds: " + creds)
+    print ("Encrypted creds: " + encryptedcreds)
+    print ("Decrypted creds: " + decryptcredential(encryptedcreds))
