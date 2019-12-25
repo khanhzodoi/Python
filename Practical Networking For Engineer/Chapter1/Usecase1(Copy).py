@@ -1,17 +1,18 @@
+import getpass # for hiding password
 import base64 # for encryption
 import requests # for making HTML message and convert it data to json
-import collections import Counter # for counting the objects in a list
+from collections import Counter # for counting the objects in a list
 import re # for regex
 
 
 # Encrypting the set of credentials
-def encryptcredential(pwd):
-    rvalue=base64.base64encode(pwd.encode()) # Encode pwd in the unicode type to UTF_8 and then encode it with base 64
-    return rvlue
+def encryptCredential(pwd):
+    rvalue=base64.b64encode(pwd.encode()) # Encode pwd in the unicode type to UTF_8 and then encode it with base 64
+    return rvalue
 
 # Decrypting the set of credentials
-def decryptcredential(pwd):
-    rvalue=base64.base64decode(pwd) # Decode base 64
+def decryptCredential(pwd):
+    rvalue=base64.b64decode(pwd) # Decode base 64
     rvalue=rvalue.decode() # Decode the unicode type that is the original string.
     return rvalue
 
@@ -101,10 +102,10 @@ customers = {
 flag=True
 ### validate if the username is part of any customers
 if (uname in customers):
-    encryptedcreds=encryptcredential(creds)
-    getcustomercreds=customers[uname]
+    encryptedCreds=encryptCredential(creds)
+    customerCreds=customers[uname]
     ### validate if the credentials provided is the same as stored credentials for that customer
-    if not(str(encryptedcreds.decode()) == str(getcustomercreds.decode())):
+    if not(str(encryptedCreds.decode()) == str(customerCreds.decode())):
             flag=False
 else:
     flag=False
