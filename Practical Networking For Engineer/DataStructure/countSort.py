@@ -1,28 +1,28 @@
-
 # Function to sort the array by the Countsort algorithm
 def countSort(aList: list) -> list:
-    copyList = aList.copy()
+    # Create list has the same length as the copyList
+    output = [0 for i in range(0, len(aList))]
 
-    # Create list has
-    output = [0 for i in range(0, len(copyList))]
+    # Find the max vaulue in the list to be the range for count
+    RANGE = max(aList)
 
-    RANGE = max(copyList)
+    # Create count to save the store the number of values in copyList
+    count = [0 for i in range(0, RANGE + 1)]
 
-    count = [0 for i in range(0, RANGE + 1) ]
-    for item in copyList:
+    # Store count of each character
+    for item in aList:
         count[item] += 1
 
+    # Change count[i] so that count[i] now contains actual
+    # position of this digit in output array
     for i in range(0, RANGE):
         count[i+1] += count[i]
 
-    for item in copyList:
+    for item in aList:
         output[count[item]-1] = item
         count[item] -= 1
 
-    for i in range(0, len(copyList)):
-        copyList[i] = output[i]
-
-    return copyList
+    return output
 
 
 if __name__ == '__main__':
